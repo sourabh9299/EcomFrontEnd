@@ -1,0 +1,16 @@
+ul {
+    padding: 10px;
+
+    background: rgb(135, 135, 196);
+}
+
+li {
+    display: inline-block;
+    margin-inline: 5px;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(51, 42, 42);
+    font-size: 17px;
+}

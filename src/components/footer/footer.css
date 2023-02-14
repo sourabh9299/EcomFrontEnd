@@ -1,0 +1,12 @@
+.Fot-footer {
+    /* position: absolute; */
+    bottom: 1px;
+    position: static;
+    bottom:;
+    background: rgb(82, 125, 206);
+
+}
+
+.Fot-footer>h1 {
+    text-align: center;
+}
