@@ -10,6 +10,9 @@
     /* text-align: center; */
     margin: auto;
 }
+.my-product {
+    text-align: center;
+}
 
 form {
     text-align: center;
@@ -31,8 +34,10 @@ input {
     /* margin: auto; */
 }
 
+.right-text {
+    text-align: right;
+}
 .Signup button {
     display: block;
     margin: 10px auto;
-
 }

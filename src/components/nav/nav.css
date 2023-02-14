@@ -1,12 +1,18 @@
-ul {
+.Router-li ul {
     padding: 10px;
-
     background: rgb(135, 135, 196);
 }
 
-li {
+.Router-li li {
     display: inline-block;
-    margin-inline: 5px;
+    margin-inline: 8px;
+}
+
+    
+.ul-Styling li {
+        display: inline-block;
+        margin-inline: 3px;
+        margin-top: 2px;
 }
 
 li a {

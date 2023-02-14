@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+// import auth from '../components/nav/Nav'
 import { useNavigate } from 'react-router-dom';
 
 import './Signup.css'
@@ -7,20 +8,25 @@ import './Signup.css'
 const Login = () => {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
+    const auth = localStorage.getItem('user')
     const navigate = useNavigate();
+    useEffect(() => {
+        if (auth) navigate('/');
+    })
     async function loginHandler() {
-        let Loginuser = await fetch('http://localhost:5000/user/login', {
+        let result = await fetch('http://localhost:5000/user/login', {
             method: 'post',
             body: JSON.stringify({ Email, Password }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        Loginuser = await Loginuser.json();
-        if (Loginuser.Email) {
-
-            console.log(Loginuser);
-            localStorage.setItem('loginuser', JSON.stringify(Loginuser));
+        result = await result.json();
+        console.log(result)
+        if (result) {
+            // console.log(Loginuser);
+            localStorage.setItem('user', JSON.stringify(result));
+            
             navigate('/');
         } else {
             alert("In valid user");

@@ -12,13 +12,21 @@ const Nav = () => {
     }
     return (
         <div className="Router-li">
-            <ul>
-                <li> <Link to="/">Product </Link></li>
-                <li> <Link to="/addProducts">Add Products</Link></li>
-                <li> <Link to="/Update">Update Products</Link></li>
-                <li>{auth ? <Link onClick={logout} to="/Signup">Logout</Link> : <Link to="/Signup"> Signup </Link>}   </li>
-                <li><Link to="/login"  > Login </Link></li>
-            </ul>
+            {
+                auth ? <ul>
+                    <li> <Link to="/">Product </Link></li>
+                    <li> <Link to="/addProduct">Add Products</Link></li>
+                    <li> <Link to="/Update">Update Products</Link></li>
+                    <li>  <Link onClick={logout} to="/Signup"> Logout ({JSON.parse(auth).Name}) </Link></li>
+
+                </ul> :
+                    <ul className="right-text">
+                        <li> <Link to="/Login">Login</Link></li>
+                        <li> <Link to="/signup">signup</Link></li>
+
+                    </ul>
+            }
+
         </div>
     )
 };

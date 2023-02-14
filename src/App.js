@@ -4,19 +4,21 @@ import Footer from './components/footer/Footer'
 import Signup from './components/SignUp'
 import PrivateComponent from './components/PrivateComponent'
 import Login from './components/Login';
+import AddProduct from './components/AddProduct';
+import Products from './components/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UpdateProduct from './components/UpdateProduct';
 function App() {
   return (<>
 
     <BrowserRouter>
-
       <Nav></Nav>
       <Routes>
         <Route element={<PrivateComponent />}>
-          <Route path="/update" element={<h1>Update Products</h1>} />
-          <Route path="/addProducts" element={<h1>Add Products</h1>} />
+          <Route path="/update" element={<UpdateProduct />} />
+          <Route path="/addProduct" element={<AddProduct />} />
           <Route path="/logout" element={<logout />} />
-          <Route path="/" element={<h1>Products</h1>} />
+          <Route path="/" element={<Products />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
