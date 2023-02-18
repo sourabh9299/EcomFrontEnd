@@ -3,14 +3,14 @@ import './Signup.css'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 const Signup = () => {
+    
     const navigate = useNavigate();
     const [Name, setName] = useState('');
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
-
     useEffect(() => {
         const auth = localStorage.getItem('user')
-        if (auth) {
+        if (auth){
             navigate('/')
         }
     })

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-
+import { Navigate } from "react-router-dom";
 
 const AddProduct = () => {
     const [Name, setName] = useState('')
     const [Price, setPrice] = useState('')
     const [Catogory, setCatogory] = useState('')
     const [Company, setCompany] = useState('')
+    // const navigate = Navigate();
     async function addProduct() {
         const user = JSON.parse(localStorage.getItem('user'))
         const UserId = user._id;
@@ -26,7 +27,8 @@ const AddProduct = () => {
             setName('');
             setPrice('');
             setCatogory('');
-            setCompany('')
+            setCompany('');
+            // navigate('/');
         }
     }
     return (

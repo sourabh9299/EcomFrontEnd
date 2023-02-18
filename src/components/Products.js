@@ -14,6 +14,8 @@ const Productslist = () => {
         setProducts(result);
     }
 
+    
+
     console.log("Products", Product);
 
     return (
