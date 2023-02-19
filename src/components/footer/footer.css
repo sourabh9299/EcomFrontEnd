@@ -1,9 +1,9 @@
 .Fot-footer {
-    /* position: absolute; */
-    bottom: 1px;
-    position: static;
-    bottom:;
-    background: rgb(82, 125, 206);
+    position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgb(82, 125, 206);
 
 }
 

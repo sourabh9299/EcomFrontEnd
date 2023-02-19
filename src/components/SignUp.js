@@ -16,7 +16,7 @@ const Signup = () => {
     })
 
     async function dataHandler() {
-        let user = await fetch('http://localhost:5000/user/register', {
+        let user = await fetch('https://sourabhfoodapp.onrender.com/user/register', {
             method: 'post',
             body: JSON.stringify({ Name, Email, Password }),
             headers: {

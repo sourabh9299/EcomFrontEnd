@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 
 const AddProduct = () => {
     const [Name, setName] = useState('')
@@ -10,7 +10,7 @@ const AddProduct = () => {
     async function addProduct() {
         const user = JSON.parse(localStorage.getItem('user'))
         const UserId = user._id;
-        let result = await fetch('http://localhost:5000/product/addProduct', {
+        let result = await fetch('https://sourabhfoodapp.onrender.com/product/addProduct', {
             method: 'post',
             body: JSON.stringify({ Name, Price, Catogory, Company, UserId }),
             headers: {

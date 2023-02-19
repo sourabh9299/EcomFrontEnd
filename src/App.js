@@ -15,7 +15,7 @@ function App() {
       <Nav></Nav>
       <Routes>
         <Route element={<PrivateComponent />}>
-          <Route path="/update" element={<UpdateProduct />} />
+          <Route path="/update/:id" element={<UpdateProduct />} />
           <Route path="/addProduct" element={<AddProduct />} />
           <Route path="/logout" element={<logout />} />
           <Route path="/" element={<Products />} />

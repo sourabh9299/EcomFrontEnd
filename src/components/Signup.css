@@ -3,13 +3,14 @@
 }
 
 .Signup {
-
     border: 1px solid black;
     width: 300px;
     border-radius: 5px;
     /* text-align: center; */
     margin: auto;
+    margin: 30px auto 10px auto;
 }
+
 .my-product {
     text-align: center;
 }
@@ -23,15 +24,21 @@ label {
     display: block;
     margin-left: 5px;
 }
+.Signup button {
+    height: auto;
+    font-size: 16px;
+}
 
+input::placeholder {
+    height: auto;
+    font-size: 16px;
+
+}
 input {
     width: 80%;
-    height: 18px;
-    /* border: 5px; */
+    height: 20px;
     margin: 5px 4px 5px 4px;
     margin-left: 5px;
-    /* text-align: center; */
-    /* margin: auto; */
 }
 
 .right-text {

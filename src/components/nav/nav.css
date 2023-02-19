@@ -11,7 +11,7 @@
     
 .ul-Styling li {
         display: inline-block;
-        margin-inline: 3px;
+        /* margin-inline: 3px; */
         margin-top: 2px;
 }
 

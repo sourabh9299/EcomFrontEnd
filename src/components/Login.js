@@ -14,7 +14,7 @@ const Login = () => {
         if (auth) navigate('/');
     })
     async function loginHandler() {
-        let result = await fetch('http://localhost:5000/user/login', {
+        let result = await fetch('https://sourabhfoodapp.onrender.com/user/login', {
             method: 'post',
             body: JSON.stringify({ Email, Password }),
             headers: {
