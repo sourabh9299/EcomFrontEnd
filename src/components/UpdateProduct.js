@@ -1,42 +1,34 @@
-import React from "react";
-import { useState } from "react";
-
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
   const [Name, setName] = useState('')
   const [Price, setPrice] = useState('')
   const [Catogory, setCatogory] = useState('')
   const [Company, setCompany] = useState('')
-  // const navigate = Navigate();
-  async function addProduct() {
-    const user = JSON.parse(localStorage.getItem('user'))
-    const UserId = user._id;
-    let result = await fetch('https://sourabhfoodapp.onrender.com/product/addProduct', {
-      method: 'post',
-      body: JSON.stringify({ Name, Price, Catogory, Company, UserId }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
+  const params = useParams();
+
+  useEffect(() => {
+    getProductDetails();
+  });
+
+  const getProductDetails = async () => {
+    console.log(params);
+    let result = await fetch(`http://localhost:5000/product/${params.id}`);
     result = await result.json()
-    console.log(result)
-    if (result.Name) {
-      alert("Product added")
-      clear();
-    }
-    function clear() {
-      setName('');
-      setPrice('');
-      setCatogory('');
-      setCompany('');
-    }
+  }
+  
+  
+
+  async function update_Prodcut() {
+    console.log(Name, Price, Catogory, Company)
+
   }
   return (
-    <>
-      <div className="Signup">
 
-        <h1>Update Products</h1>
+    <div className="Signup">
+      
+      <h1>Update Products</h1>
         <form action="">
           <input type="text" placeholder='Product-Title' value={Name}
             onChange={(e) => { setName(e.target.value) }}
@@ -52,10 +44,10 @@ const UpdateProduct = () => {
           />
 
 
-          <button type="button" onClick={addProduct}>Add</button>
+        <button type="button" onClick={update_Prodcut}>Add</button>
         </form>
       </div>
-    </>
+
   )
 }
 
