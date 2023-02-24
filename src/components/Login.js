@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import auth from '../components/nav/Nav'
 import { useNavigate } from 'react-router-dom';
 
 import './Signup.css'
@@ -14,7 +13,7 @@ const Login = () => {
         if (auth) navigate('/');
     })
     async function loginHandler() {
-        let result = await fetch('https://sourabhfoodapp.onrender.com/user/login', {
+        let result = await fetch('https://myecom.onrender.com/user/login', {
             method: 'post',
             body: JSON.stringify({ Email, Password }),
             headers: {
@@ -23,7 +22,8 @@ const Login = () => {
         });
         result = await result.json();
         console.log(result)
-        if (result) {
+
+        if (result.Name) {
             // console.log(Loginuser);
             localStorage.setItem('user', JSON.stringify(result));
             
@@ -38,14 +38,14 @@ const Login = () => {
             <h1>Login</h1>
             <form action="">
                 <input type="text" value={Email} placeholder="Email"
-                    onChange={(e) => { setEmail(e.target.value) }}
+                    onChange={(e) => { setEmail(e.target.value) }} 
                 />
 
                 <input type="password" value={Password} placeholder="Password"
-                    onChange={(e) => { setPassword(e.target.value) }}
+                    onChange={(e) => { setPassword(e.target.value) }} 
                 />
 
-                <button type="button" onClick={loginHandler}>
+                <button className="loginBtn" type="buttom" onClick={loginHandler}>
                     Login
                 </button>
 

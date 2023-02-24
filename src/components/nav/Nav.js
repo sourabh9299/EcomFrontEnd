@@ -6,6 +6,7 @@ const Nav = () => {
 
     const naviagte = useNavigate();
     const auth = localStorage.getItem('user')
+    console.log(auth)
     function logout() {
         localStorage.clear();
         naviagte('/signup');
@@ -13,13 +14,14 @@ const Nav = () => {
     return (
         <div className="Router-li">
             {
-                auth ? <ul>
+                auth ? <div>
+                    <ul>
                     <li> <Link to="/">Product </Link></li>
                     <li> <Link to="/addProduct">Add Products</Link></li>
-
-                    <li>  <Link onClick={logout} to="/Login"> Logout ({JSON.parse(auth).Name}) </Link></li>
-
-                </ul> :
+                        <li>  <Link onClick={logout} to="/Login"> Logout ({JSON.parse(auth).Name})  </Link></li>
+                    </ul>
+                </div>
+                    :
                     <ul className="right-text">
                         <li> <Link to="/Login">Login</Link></li>
                         <li> <Link to="/signup">signup</Link></li>

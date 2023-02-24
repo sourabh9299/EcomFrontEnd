@@ -19,16 +19,18 @@
 }
 
 .ul-Styling button:focus-visible {
-    border: none    ;
+    border: none;
 }
 
-.ul-Styling button:first-child:hover {
+.ul-Styling button:nth-child(1):hover {
     background-color: Green;
+    color: rgb(255, 255, 255);
     transition-duration: .3s;
 }
 
 .ul-Styling button:nth-child(2):hover {
     background-color: red;
+    color: white;
     transition-duration: .3s;
 }
 

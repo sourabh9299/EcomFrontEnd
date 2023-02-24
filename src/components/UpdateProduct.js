@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
+
   const [Name, setName] = useState('')
   const [Price, setPrice] = useState('')
   const [Catogory, setCatogory] = useState('')
@@ -14,14 +15,33 @@ const UpdateProduct = () => {
 
   const getProductDetails = async () => {
     console.log(params);
-    let result = await fetch(`http://localhost:5000/product/${params.id}`);
+    let result = await fetch(`https://myecom.onrender.com/product/${params.id}`);
     result = await result.json()
+    console.log(result);
+    setName(result.Name)
+    setPrice(result.Price)
+    setCatogory(result.Catogory)
+    setCompany(result.Company)
   }
   
   
 
   async function update_Prodcut() {
+
     console.log(Name, Price, Catogory, Company)
+    let result = await fetch(`https://myecom.onrender.com/product/${params.id}`, {
+      method: 'put',
+      body: JSON.stringify({ Name, Price, Catogory, Company }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    result = await result.json();
+    console.log(result)
+    if (result.message) {
+      console.log("updated")
+      alert("Product is updated")
+    }
 
   }
   return (
@@ -44,7 +64,7 @@ const UpdateProduct = () => {
           />
 
 
-        <button type="button" onClick={update_Prodcut}>Add</button>
+        <button type="button" onClick={update_Prodcut}>Update Products</button>
         </form>
       </div>
 

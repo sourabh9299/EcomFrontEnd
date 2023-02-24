@@ -11,13 +11,13 @@ const Productslist = () => {
 
     const getProducts = async () => {
         // let result = await fetch('http://localhost:5000/product/');
-        let result = await fetch('https://sourabhfoodapp.onrender.com/product/');
+        let result = await fetch('https://myecom.onrender.com/product/');
         result = await result.json();
         setProducts(result);
     }
 
     async function Deletefn(id) {
-        let data = await fetch(`http://localhost:5000/product/${id}`, {
+        let data = await fetch(`https://myecom.onrender.com/product/${id}`, {
             method: "Delete"
         });
         data = data.json();
